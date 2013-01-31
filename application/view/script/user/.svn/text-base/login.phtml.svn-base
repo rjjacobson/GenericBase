@@ -1,0 +1,108 @@
+  <!DOCTYPE html>
+<html lang="en">
+<link href="/tpl/css/bootstrap.css" rel="stylesheet">
+<link href="/tpl/css/layout.css" rel="stylesheet">
+<link href="/tpl/css/twitter.css" rel="stylesheet">
+
+<script src="/tpl/js/jquery.js"></script>
+<script src="/tpl/js/jquery-ui-1.8.16.custom.min.js"></script>
+<script src="/tpl/js/jquery.form.js"></script>
+<script src="/tpl/js/bootstrap-modal.js"></script>
+
+	
+        <script>
+            $(document).ready(function() {
+
+            	var errors = "";
+				<?php if (isset($this->passBackVariables["registerError"])){echo "errors = '".$this->passBackVariables["registerError"]."';";} ?>
+				<?php if (isset($this->passBackVariables["firstName"])){echo "firstName = '".$this->passBackVariables["firstName"]."';";} ?>
+				<?php if (isset($this->passBackVariables["lastName"])){echo "lastName = '".$this->passBackVariables["lastName"]."';";} ?>
+				
+				if (errors != "")
+				{
+					$("#firstNameTextRegister").val(firstName);
+					$("#lastNameTextRegister").val(lastName);
+    				$("#loginWarning").text(errors);
+    				$("#loginWarning").show();
+    				event.preventDefault();
+    				return false;
+				}
+				else
+				{
+	            	$("#loginWarning").hide();
+				}
+                $('#registerLocalButton').click(function(){
+                	
+    				if ($("#firstNameTextRegister").val() == "" || $("#lastNameTextRegister").val() == "" || $("#emailTextRegister").val() == ""  || $("#passwordTextRegister").val() == "" )
+    				{
+        				$("#loginWarning").text('You must fill in all of the fields.');
+        				$("#loginWarning").show();
+        				event.preventDefault();
+        				return false;
+    				} 
+    				//TODO All validations
+
+                 });
+
+
+            });
+            </script>  
+  
+  
+
+
+<body>
+	<div class="container">
+		<div class="content">
+        	<div class="page-header">
+        	<h1 style="float:left;width:59%">Penguit</h1>
+
+          		<form  method="post" action="/user/login/login" id="login-form" >          
+		            <input style="width:120px;margin:2px;height:20px;font:12px 'Helvetica Neue',Arial,sans-serif;color:black" class="large"  id="emailTextLogin" name="emailTextLogin" type="text" placeholder="Email Address">
+		            <input style="width:120px;margin:2px;height:20px;font:12px 'Helvetica Neue',Arial,sans-serif;color:black"class="large" id="passwordTextLogin" name="passwordTextLogin" type="password" placeholder="Password">
+		            
+
+	         	  <input style="width:60px" type="submit" class="btn primary" value="Log In" style="margin:2px;">
+          		</form>  
+          	
+        	</div>
+        <div class="row">
+          <div class="span16">
+          
+          <div class="row">
+          <div class="span10">
+   
+				 	                          			
+          </div>
+          <div class="span4">
+
+
+
+	        	<h3>Sign up for Penguit !</h3> 
+	        	<hr style="color:#404040;background-color:#404040;height:2px;margin:2px 2px 2px">
+
+		        <form method="post" action="/user/login/register" id="register-form" >  
+			              <input class="large" id="firstNameTextRegister" name="firstNameTextRegister" size="30" type="text" placeholder="Full Name" style="width:210px;margin:2px;height:25px;font:14px/18px 'Helvetica Neue',Arial,sans-serif;color:black">
+			             <br><input class="large" id="emailTextRegister" name="emailTextRegister" size="30" type="text" placeholder="Your Email" style="width:210px;margin:2px;height:25px;font:14px/18px 'Helvetica Neue',Arial,sans-serif;color:black">
+			              <br><input class="large" type="password" id="passwordTextRegister" name="passwordTextRegister" size="30" type="text" placeholder="Password" style="width:210px;margin:2px;height:25px;font:14px/18px 'Helvetica Neue',Arial,sans-serif;color:black">
+						<br>
+						     <input type="submit" class="btn primary pull-right" id="registerLocalButton" name="registerLocalButton" value="Sign Up" style="margin:2px;">
+								
+						<br>					
+				<button class="btn danger disabled" name="loginWarning" id="loginWarning" style="width:210px;margin:2px;font:14px/18px 'Helvetica Neue',Arial,sans-serif;color:white" disabled="disabled">Primary action</button>
+				</form>
+          </div>
+        </div>
+        
+         
+							
+          </div>
+        
+        </div>
+      </div>
+      <footer>
+        <p>&copy; Company 2011</p>
+      </footer>
+
+    </div> <!-- /container -->
+  

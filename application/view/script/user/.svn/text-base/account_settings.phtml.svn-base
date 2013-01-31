@@ -1,0 +1,33 @@
+
+<div class="container-fluid">
+	<h1>Account Settings: <?php print $this->user['username'];?></h1>
+	<img src="<?php print $this->user['social_media']['twitter_photo'];?>">
+	<form method="post" action="/user/settings">
+		<div class="clearfix">
+            <label id="optionsRadio">Default Sharing Setting</label>
+            <div class="input">
+              <ul class="inputs-list">
+                <li>
+                  <label>
+                    <input <?php if ($this->user['settings']['sharing_default'] == 'public') {print 'checked="checked"';}?> name="sharing_default" value="public" type="radio">
+                    <span>Public</span>
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <input <?php if ($this->user['settings']['sharing_default'] == 'private') {print 'checked="checked"';}?> name="sharing_default" value="private" type="radio">
+                    <span>Private</span>
+                  </label>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+		<div class="actions">
+            <input class="btn primary" value="Save changes" type="submit">&nbsp;<button type="reset" class="btn">Cancel</button>
+          </div>	
+	</form>
+         
+</div>
+	
+

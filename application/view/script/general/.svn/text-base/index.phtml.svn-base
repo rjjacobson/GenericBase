@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="/tpl/css/bootstrap.css" rel="stylesheet">
+<link href="/tpl/css/layout.css" rel="stylesheet">
+<link href="/tpl/css/twitter.css" rel="stylesheet">
+
+<script src="/tpl/js/jquery.js"></script>
+<script src="/tpl/js/jquery-ui-1.8.16.custom.min.js"></script>
+<script src="/tpl/js/jquery.form.js"></script>
+<script src="/tpl/js/bootstrap-modal.js"></script>
+<script src="/tpl/js/test.js"></script>
+<script src="/tpl/js/main.js"></script>
+<script src="/tpl/js/updates.js"></script>
+<script src="/tpl/js/bootstrap-tabs.js"></script>
+
+
+<body id="site_index">
+<div class="container">
+<div class="content">
+<div class="page-header">
+<h1>Penguit</h1>
+
+</div>
+
+<div class="row">
+
+<div class="span9" style="margin-left: 10px"><input style="width: 85%"
+	id="searchText" name="searchText"
+	placeholder="Search (books, movies, friends, restaurants, tv, music) ">
+<button id="performSearchButton" name="performSearchButton"
+	class="btn primary">Search</button>
+				
+				<!-- 
+           <button id="loadModal" name="loadModal" data-controls-modal="modal-from-dom" data-backdrop="true" data-keyboard="true" class="btn primary">Search</button>
+           
+           <button style="display:none" id="loadDeleteModal" name="loadModal" data-controls-modal="delete-modal" data-backdrop="true" data-keyboard="true" class="btn primary">Search</button>
+              --> <!-- ADDING NEW STUFF MODAL --> <?php 
+              include (VIEW.'/script/general/MODAL/searchModal.phtml');
+              include (VIEW.'/script/general/MODAL/deleteModal.phtml');
+              ?> <!-- END OF MODAL -->
+	<ul id="tabs" class="tabs" data-tabs="tabs" style="margin-top: 5px">
+		<li class="active" style="margin-left: 0px" id="myPengsListItem">
+			<a href="#pengs" id="myPengsLink" style="padding: 3px 8px 3px 8px; line-height: 20px">My Pengs</a>
+		</li>
+		<li style="margin-left: 0px" id="friendsListItem">
+			<a href="#myFriends" id="friendsLink" style="padding: 3px 8px 3px 8px; line-height: 20px">Friends' Pengs</a>
+		</li>
+		<li style="margin-left: 0px" id="allPengsListItem">
+			<a href="#allPengs" id="pengNationLink" style="padding: 3px 8px 3px 8px; line-height: 20px">Peng Nation</a>
+		</li>
+		<li style="margin-left: 0px" id="searchLinkListItem">
+			<a href="#search" id="searchLink" style="padding: 3px 8px 3px 8px; line-height: 20px">Search</a>
+		</li>
+	</ul>
+	
+	<div id="my-tab-content-main" class="tab-content">
+		<div class="active tab-pane" id="pengs">
+			<hr id="showOnSearch" style="margin: 15px 0 0px 0">
+		</div>
+		
+		<div class="tab-pane" id="myFriends">
+		
+		</div>
+		
+		<div class="tab-pane" id="allPengs">
+			<hr id="showOnSearch" style="margin: 15px 0 0px 0">
+		</div>
+		
+		<div class="tab-pane" id="search">
+			<center><img id="spinningWaitForAmazon" name="spinningWaitForAmazon"
+				src="/tpl/images/wait30trans.gif"></center>
+			<div id="putActualSearchResultsHere"></div>
+		</div>
+	</div>
+</div>
+
+<!-- RIGHT SIDE SEARCH -->
+<div class="span4">
+
+				
+	<div id="filterDiv">
+		<input class="search" style="width: 85%" id="filterTextInput" name="searchText" placeholder="Filter Items">
+		<div id="filterTagDiv">
+		</div>
+	</div>
+	<hr id="showOnSearch" style="margin: 15px 0 15px 0">
+	<div id="searchHistory">
+		Ron Jacobson
+	</div>
+</div>
+
+
+</div>
+</div>
+<footer>
+<p>&copy; Company 2011</p>
+</footer></div>
+<!-- /container -->
+

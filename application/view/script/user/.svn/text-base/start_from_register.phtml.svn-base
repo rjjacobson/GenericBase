@@ -1,0 +1,40 @@
+<script>
+$(document).ready(function() {
+	$("#launchModalButton").trigger('click');
+});
+</script>
+ 
+     	<div id="modal-from-dom" class="modal hide fade">
+            <div class="modal-header">
+              <a href="#" class="close">&times;</a>
+              <center></center><h3>Welcome to Penguit<?php 
+              if (isset($this->name) && strlen($this->name)) {
+              	echo ', '.$this->name;	
+              }
+              ?>!</h3></center>
+            </div>
+            <div class="modal-body">
+              <p>Connect with your friends!</p>
+              <a href="javascript: void(0)" 
+				   onclick="window.open('/user/connect/twitter/start', 
+				  'penguit_twitter_connect_<?php echo time();?>', 
+				  'width=800, height=600'); 
+   					return false;">
+   			  	<img src="/tpl/images/social/twitter/connect_with_twitter.png" width="125" height="25">
+   			  </a>
+   			  <p>
+   			  <a href="javascript: void(0)" 
+				   onclick="window.open('https://www.facebook.com/dialog/oauth?client_id=<?php print $this->png->facebookAppId;?>&redirect_uri=<?php print $this->png->facebookOAuthCallback;?>', 
+				  'penguit_facebook_connect_<?php echo time();?>', 
+				  'width=800, height=600'); 
+   					return false;">
+   			  	<img src="/tpl/images/social/facebook/connect_with_facebook.png">
+   			  </a>
+   			  
+            </div>
+            <div class="modal-footer">
+              <a href="#" class="btn primary">Primary</a>
+              <a href="#" class="btn secondary">Secondary</a>
+            </div>
+        </div>
+          <button id="launchModalButton" name="launchModalButton" style="display:none" data-controls-modal="modal-from-dom" data-backdrop="true" data-keyboard="true" class="btn danger">Launch Modal</button>

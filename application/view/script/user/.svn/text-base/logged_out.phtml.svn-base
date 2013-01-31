@@ -1,0 +1,27 @@
+
+    
+    <div class="container">
+		<div class="hero-unit">
+	       <div class="row">
+	        	<div class="span8" >
+	        		<br>
+	        		<img class="thumbnail" src="/tpl/images/penguin.jpeg" width=400>
+	        	</div>
+	        	<div class="span5" style="margin:0px">
+	        		
+	        		<div id="registerLocal" style="width:280px">
+			        	<h3>Come back soon! We miss you already!</h3>
+			        	<hr style="color:#404040;background-color:#404040;height:2px;margin:2px 2px 2px">
+	
+					</div>
+					
+
+				</div>		
+					
+						            	
+	        </div>
+	        
+	    </div>
+    </div> <!-- /container -->
+    
+    				<!-- 		<a href="/user/login/twitter" target="_blank">Twitter</a><br>  -->

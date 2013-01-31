@@ -1,0 +1,89 @@
+
+	<link href="/tpl/css/classic_bootstrap.css" rel="stylesheet">
+      <style type="text/css">
+        
+            body {
+                padding-top: 60px;
+            }
+        </style>
+
+	</head>
+	
+  <body>
+
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="container">
+          <a class="brand" href="#">Penguit</a>
+
+            <form method="post" action="/user/login/login" id="login-form" class="pull-right">          
+	            <input class="input-small" style="width:130px" id="emailTextLogin" name="emailTextLogin" type="text" placeholder="Email Address">
+	            <input class="input-small" style="width:130px"id="passwordTextLogin" name="passwordTextLogin" type="password" placeholder="Password">
+	            <button class="btn" type="submit">Log in</button>
+          	</form>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container">
+		<div class="hero-unit">
+	       <div class="row">
+	        	<div class="span8" >
+	        		<br>
+	        		<img class="thumbnail" src="/tpl/images/penguin.jpeg" width=400>
+	        	</div>
+	        	<div class="span5" style="margin:0px">
+	        		
+	        		<div id="registerLocal" style="width:280px">
+			        	<h3>New to Penguit? Join Today!</h3>
+			        	<hr style="color:#404040;background-color:#404040;height:2px;margin:2px 2px 2px">
+
+				        <form method="post" action="/user/login/register" id="register-form" >  
+					              <input 
+					              <?php echo 'value="'.$this->firstName.'"'; ?>
+					              	class="large" id="firstNameTextRegister" name="firstNameTextRegister" size="30" type="text" placeholder="First Name" style="width:270px;margin:2px;height:25px;font:14px/18px 'Helvetica Neue',Arial,sans-serif;color:black">
+					              <?php 
+					              if (isset($this->firstNameError) && strlen($this->firstNameError)) {?>
+								  	<div class="alert-message block-message error">
+        						 	<p><?php echo $this->firstNameError ?></p>
+      							 	</div> 	
+					              <?php }
+					              ?>
+					              <input 
+					              <?php echo 'value="'.$this->lastName.'"'; ?>
+					              	class="large" id="lastNameTextRegister" name="lastNameTextRegister" size="30" type="text" placeholder="Last Name" style="width:270px;margin:2px;height:25px;font:14px/18px 'Helvetica Neue',Arial,sans-serif;color:black">
+					              <input 
+					              <?php echo 'value="'.$this->email.'"'; ?>
+					               class="large" id="emailTextRegister" name="emailTextRegister" size="30" type="text" placeholder="Your Email" style="width:270px;margin:2px;height:25px;font:14px/18px 'Helvetica Neue',Arial,sans-serif;color:black">
+					              <?php 
+					              if (isset($this->emailError) && strlen($this->emailError)) {?>
+								  	<div class="alert-message block-message error">
+        						 	<p><?php echo $this->emailError ?></p>
+      							 	</div> 	
+					              <?php }
+					              ?>
+					              <input class="large" type="password" id="passwordTextRegister" name="passwordTextRegister" size="30" type="text" placeholder="Password" style="width:270px;margin:2px;height:25px;font:14px/18px 'Helvetica Neue',Arial,sans-serif;color:black">
+								  <?php 
+								  if (isset($this->passwordError) && strlen($this->passwordError)) {?>
+								  	<div class="alert-message block-message error">
+        						 	<p><?php echo $this->passwordError ?></p>
+      							 	</div> 	
+					              <?php }
+					              ?>
+								<br>
+								     <input type="submit" class="btn primary pull-right" id="registerLocalButton" name="registerLocalButton" value="Sign Up" style="margin:2px;">
+										
+								<br>					
+						</form>
+					</div>
+					
+
+				</div>		
+					
+						            	
+	        </div>
+	        
+	    </div>
+    </div> <!-- /container -->
+    
+    				<!-- 		<a href="/user/login/twitter" target="_blank">Twitter</a><br>  -->
