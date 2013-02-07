@@ -7,6 +7,7 @@ try {
 	define('MODEL', BASE.'application/model/');
 	define('LIBRARY', BASE.'application/library/');
 	
+	echo "YOYO";
 	$query_pos = strpos($_SERVER['REQUEST_URI'],'?');
 	if ($query_pos) {
 		$paths = explode('/',strtolower(str_replace('//','/',substr($_SERVER['REQUEST_URI'],0,$query_pos))));
@@ -66,6 +67,8 @@ try {
 		}
 	}
 	$object = str_replace('-','/',$object);
+	
+
 	if (file_exists(CONTROLLER.$object.'Controller.php')) {
 		require_once (CONTROLLER.$object.'Controller.php');
 		$controller_name = $object.'Controller';

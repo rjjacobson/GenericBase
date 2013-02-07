@@ -1,0 +1,31 @@
+<script>
+$(document).ready(function() {
+    $('#new-status form').submit(function(e) {
+        e.preventDefault();
+        $.ajax({
+            url: '/ajax/search/main',
+            type: 'POST',
+            dataType: 'json',
+            data: { text: $('#new-status').find('textarea').val() },
+            success: function(data) {
+                $('#statuses').append('<li>' + data.text + '</li>');
+                $('#new-status').find('textarea').val('');
+            }
+        });
+    });
+});
+
+</script>
+
+ <div id="new-status">
+      <h2>New monolog</h2>
+      <form action="">
+        <textarea></textarea><br>
+        <input type="submit" value="Post"/>
+      </form>
+    </div>
+
+    <div id="statuses">
+      <h2>Monologs</h2>
+      <ul></ul>
+    </div>
